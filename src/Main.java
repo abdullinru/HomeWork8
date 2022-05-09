@@ -3,7 +3,21 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
 //        isYearVis(1900);
-        installApp(1,2022);
+//        installApp(1,2022);
+        int deliveryDistance = 95;
+        countDays(deliveryDistance);
+    }
+
+    private static void countDays(int deliveryDistance) {
+        int countDay = 0;
+        if (deliveryDistance <= 20) {
+            countDay = 1;
+        } else if (deliveryDistance <= 60) {
+            countDay = 2;
+        } else if (deliveryDistance <= 100) {
+            countDay = 3;
+        }
+        System.out.println("Потребуется дней: " + countDay);
     }
     private static void isYearVis(int year) {
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
